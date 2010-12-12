@@ -1,0 +1,8 @@
+Author:
+Stefan Zerkalica <zerkalica@gmail.com>
+Milan Nikolic <gen2brain@gmail.com>
+
+Contributors:
+Jon Nettleton <jon.nettleton@gmail.com> - Multimedia keys via dbus/hal
+Fomin Denis <fominde@gmail.com> - Debian packaging, patches
+Marc Brevoort <kleinebre@hotmail.com> - Multi-channel support

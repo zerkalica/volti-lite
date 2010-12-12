@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Volti lite
+Name[ru]=Volti трей
+Exec=voltilite
+Terminal=false
+Type=Application
+Icon=multimedia-volume-control
+Comment=Tray Audio Volume Control
+Categories=Audio;AudioVideo;

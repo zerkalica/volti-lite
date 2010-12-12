@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Volti lite mixer
+Name[ru]=Volti микшер
+Exec=voltilite-mixer
+Terminal=false
+Type=Application
+Icon=multimedia-volume-control
+Comment=Tray Audio Volume Control
+Categories=Audio;AudioVideo;
