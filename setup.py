@@ -10,8 +10,10 @@ from distutils.command.build import build
 from distutils.dep_util import newer
 from distutils.log import info
 
-from src.config import Config
-config = Config()
+#from src.config import Config
+#config = Config()
+app_name = "voltilite"
+app_version="0.1~git"
 
 PO_DIR = 'po'
 MO_DIR = os.path.join('build', 'mo')
@@ -23,7 +25,7 @@ class BuildLocales(build):
 
     for po in glob.glob(os.path.join(PO_DIR, '*.po')):
       lang = os.path.basename(po[:-3])
-      mo = os.path.join(MO_DIR, lang, config.app_name + '.mo')
+      mo = os.path.join(MO_DIR, lang, app_name + '.mo')
 
       directory = os.path.dirname(mo)
       if not os.path.exists(directory):
@@ -48,7 +50,7 @@ class Install(install_data):
 
   def _find_mo_files(self):
     data_files = []
-    for mo in glob.glob(os.path.join(MO_DIR, '*', config.app_name + '.mo')):
+    for mo in glob.glob(os.path.join(MO_DIR, '*', app_name + '.mo')):
         lang = os.path.basename(os.path.dirname(mo))
         dest = os.path.join('share', 'locale', lang, 'LC_MESSAGES')
         data_files.append((dest, [mo]))
@@ -76,14 +78,14 @@ class Install(install_data):
             data_files.append((targetpath, [sourcepath]))
     return data_files
 
-setup(name = config.app_name,
-        version = config.app_version,
+setup(name = app_name,
+        version = app_version,
         description = "GTK+ application for controlling audio volume from system tray/notification area",
         author = "Stefan Zerkalica",
         author_email = "zerkalica@gmail.com",
         license = "GNU GPLv3",
         url = "https://github.com/zerkalica/volti-lite/",
-        download_url = "https://github.com/zerkalica/voltilite/archives/master/volti-lite-%s.tar.gz " % (config.app_version),
+        download_url = "https://github.com/zerkalica/voltilite/archives/master/volti-lite-%s.tar.gz " % (app_version),
         packages = ["voltilite"],
         package_dir = {"voltilite": "src"},
         scripts = ["voltilite", "voltilite-mixer"],
